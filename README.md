@@ -84,4 +84,4 @@ print(device_lib.list_local_devices())
 ## Trouble Shooting 
 
 - GPU 드라이버를 잡지 못해서 앱을 돌릴 수 없는 상황 
-  + https://github.com/NVIDIA/nvidia-docker/issues/1458#issuecomment-777852087 무시하는 옵션을 넣고 돌린다. 
+  + https://github.com/NVIDIA/nvidia-docker/issues/1458#issuecomment-777852087 무시하는 옵션 `--env NVIDIA_DISABLE_REQUIRE=1` 을 넣고 돌린다. 
