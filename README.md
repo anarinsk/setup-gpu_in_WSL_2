@@ -81,6 +81,12 @@ print(device_lib.list_local_devices())
 
 - gpu가 잘 잡혔는지 확인해볼 수 있다. 
 
+## Docker compose 
+
+- [LINK](https://docs.docker.com/compose/gpu-support/)
+- [EXAMPLE](https://github.com/anarinsk/setup-docker_compose/blob/main/5600H/docker-anari-tfgpu.yml)
+
+
 ## Trouble Shooting 
 
 - GPU 드라이버를 잡지 못해서 앱을 돌릴 수 없는 상황 
