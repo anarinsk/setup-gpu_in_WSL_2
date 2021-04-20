@@ -66,7 +66,7 @@ docker run --gpus=all --env NVIDIA_DISABLE_REQUIRE=1 -d -it -p 127.0.0.1:8888:88
 - tf 노트북에서 아래의 명령을 실행해 본다. 
 
 
-```shell
+```jupyter
 import tensorflow
 from tensorflow.python.client import device_lib
 tensorflow.config.list_physical_devices('GPU')
