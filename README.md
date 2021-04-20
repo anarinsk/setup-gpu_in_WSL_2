@@ -58,8 +58,14 @@ docker run --gpus=all --env NVIDIA_DISABLE_REQUIRE=1 -d -it -p 127.0.0.1:8888:88
 
 - `gpus=all`, `--env NVIDIA_DISABLE_REQUIRE=1`는 gpu 구동을 위한 옵션이다. 
 - 나머지는 도커 실행 옵션이다. 
-  - lab을 활성화
-  - token은 `YOUR_NUMBERS`로 임의로 지정한다. 
+  - `d`: detached mode 
+  - `it`: 
+  - `p`: port forwarding 
+  - `v`: Volume creating 
+  - `-e`
+    - `GRANT_SUDO=yes`: sudo 부여 
+    - `JUPYTER_ENABLE_LAB=yes`: lab을 활성화
+    - `JUPYTER_TOKEN=YOUR_NUMBERS`: `YOUR_NUMBERS`로 토큰(주피터 비번) 지정  
 
 ### How to check 
 
