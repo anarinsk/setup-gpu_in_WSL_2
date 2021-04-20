@@ -80,3 +80,8 @@ print(device_lib.list_local_devices())
 ```
 
 - gpu가 잘 잡혔는지 확인해볼 수 있다. 
+
+## Trouble Shooting 
+
+- GPU 드라이버를 잡지 못해서 앱을 돌릴 수 없는 상황 
+  + https://github.com/NVIDIA/nvidia-docker/issues/1458#issuecomment-777852087 무시하는 옵션을 넣고 돌린다. 
