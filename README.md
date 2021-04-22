@@ -80,6 +80,12 @@ print(device_lib.list_local_devices())
 ```
 
 - gpu가 잘 잡혔는지 확인해볼 수 있다. 
+- gpu 옵션을 끄고 싶다면? 
+
+```shell
+import os
+os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
+```
 
 ## Docker compose 
 
