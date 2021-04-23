@@ -73,6 +73,8 @@ docker run --gpus=all --env NVIDIA_DISABLE_REQUIRE=1 -d -it -p 127.0.0.1:8888:88
 
 
 ```notebook
+import os
+os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 import tensorflow
 from tensorflow.python.client import device_lib
 tensorflow.config.list_physical_devices('GPU')
@@ -84,8 +86,12 @@ print(device_lib.list_local_devices())
 
 ```shell
 import os
-os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
+os.environ["CUDA_VISIBLE_DEVICES"] = "0"
+#os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 ```
+
+- 노트북 맨 위에 올리자. 전환이 필요하면 커널 리로딩을 해야 한다. 
+- "0"은 GPU 1개 일 때 해당 GPU를 쓴다는 이야기다. "-1"은 GPU를 죽인다는 뜻. 
 
 ## Docker compose 
 
