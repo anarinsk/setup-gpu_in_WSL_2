@@ -8,21 +8,18 @@ How to setup NVIDIA GPU setup in WSL 2
 
 https://docs.docker.com/docker-for-windows/wsl/#gpu-support
 
+#### Requsite 
+
++ Docker <= 3.3.1 
++ WSL 2 with Ubuntu 
+
 #### Installing
 
-- Install CUDA Driver. See [THIS](https://developer.nvidia.com/cuda/wsl)
+- Install CUDA Driver on WINDOWS. See [THIS](https://developer.nvidia.com/cuda/wsl)
+  + 윈도에 CUDA를 지원하는 드라이버를 설치하자.
 
-- 툴킷을 꼭 깔아야 하는지 의문이다. 이 상태에서 D4TW(Docker for Desktop Windows)에서 테스트 도커가 잘 돌아간다. 
-  - 다만 드라이버 버전 인식에 에러가 종종 있는 것 같다. 아래와 같이 버전 체크 없이 돌리자; `--env NVIDIA_DISABLE_REQUIRE=1` 
-
-```shell
-docker run --gpus=all --env NVIDIA_DISABLE_REQUIRE=1 nvcr.io/nvidia/k8s/cuda-sample:nbody nbody -gpu -benchmark
-```
-
-- You should install nvidia toolkit. See [THIS](https://docs.nvidia.com/cuda/wsl-user-guide/index.html#running-cuda)
-- Follow remains.
-
-- Toolkit install할 때 Ubuntu version, toolkit 버전을 맞춰야 한다. 현재 문서는 1804로 되어 있는데, 20 LTS 버전을 깔았다면 2004로 디렉토리 이름을 바꿔주면 된다. 
+- WSL에 cuda toolkit을 깔자. 
+  + Toolkit install할 때 Ubuntu version, toolkit 버전을 맞춰야 한다. 현재 문서는 1804로 되어 있는데, 20 LTS 버전을 깔았다면 2004로 디렉토리 이름을 바꿔주면 된다. 
 
 ```shell
 $ apt-key adv --fetch-keys http://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/7fa2af80.pub
@@ -36,8 +33,11 @@ $ apt-get update
 $ apt-get install -y cuda-toolkit-11-3
 ```
 
-- Testing CUDA Installation 
-https://docs.nvidia.com/cuda/wsl-user-guide/index.html#running-simple-containers
+- 드라이버 버전 인식에 에러가 종종 있는 것 같다. 아래와 같이 버전 체크 없이 돌리자; `--env NVIDIA_DISABLE_REQUIRE=1` 
+
+```shell
+docker run --gpus=all --env NVIDIA_DISABLE_REQUIRE=1 nvcr.io/nvidia/k8s/cuda-sample:nbody nbody -gpu -benchmark
+```
 
 ## Tensorflow W/ Jupyter in DOCKER 
 
