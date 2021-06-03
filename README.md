@@ -11,6 +11,7 @@ https://docs.docker.com/docker-for-windows/wsl/#gpu-support
 #### Requsite 
 
 + Docker <= 3.3.1 
+  + Docker 3.3.3 버전에서 에러 난다. 
 + WSL 2 with Ubuntu 
 
 #### Installing
