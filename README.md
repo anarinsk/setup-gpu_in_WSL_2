@@ -43,6 +43,36 @@ $ apt-get install -y cuda-toolkit-11-3
 docker run --gpus=all --env NVIDIA_DISABLE_REQUIRE=1 nvcr.io/nvidia/k8s/cuda-sample:nbody nbody -gpu -benchmark
 ```
 
+- 잘 돌아간 예시화면 
+
+```shell
+$ docker run --gpus all nvcr.io/nvidia/k8s/cuda-sample:nbody nbody -gpu -benchmark
+Run "nbody -benchmark [-numbodies=<numBodies>]" to measure performance.
+        -fullscreen       (run n-body simulation in fullscreen mode)
+        -fp64             (use double precision floating point values for simulation)
+        -hostmem          (stores simulation data in host memory)
+        -benchmark        (run benchmark to measure performance)
+        -numbodies=<N>    (number of bodies (>= 1) to run in simulation)
+        -device=<d>       (where d=0,1,2.... for the CUDA device to use)
+        -numdevices=<i>   (where i=(number of CUDA devices > 0) to use for simulation)
+        -compare          (compares simulation results running once on the default GPU and once on the CPU)
+        -cpu              (run n-body simulation on the CPU)
+        -tipsy=<file.bin> (load a tipsy model file for simulation)
+
+NOTE: The CUDA Samples are not meant for performance measurements. Results may vary when GPU Boost is enabled.
+
+> Windowed mode
+> Simulation data stored in video memory
+> Single precision floating point simulation
+> 1 Devices used for simulation
+GPU Device 0: "GeForce GTX 1070" with compute capability 6.1
+
+> Compute 6.1 CUDA device: [GeForce GTX 1070]
+15360 bodies, total time for 10 iterations: 11.949 ms
+= 197.446 billion interactions per second
+= 3948.925 single-precision GFLOP/s at 20 flops per interaction
+```
+
 ## Tensorflow W/ Jupyter in DOCKER 
 
 - Docker를 통해서 Tensorflow를 Jupyter로 접근하는 법을 알아보자. 
