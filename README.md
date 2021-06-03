@@ -18,9 +18,10 @@ https://docs.docker.com/docker-for-windows/wsl/#gpu-support
 
 - Install CUDA Driver on WINDOWS. See [THIS](https://developer.nvidia.com/cuda/wsl)
   + 윈도에 CUDA를 지원하는 드라이버를 설치하자.
+  + 얘를 통해서 WSL 내 gpu를 호출한다. 
 
 - WSL에 cuda toolkit을 깔자. 
-  + Toolkit install할 때 Ubuntu version, toolkit 버전을 맞춰야 한다. 현재 문서는 1804로 되어 있는데, 20 LTS 버전을 깔았다면 2004로 디렉토리 이름을 바꿔주면 된다. 
+  + Toolkit install할 때 Ubuntu version, toolkit 버전을 맞춰야 한다. 현재 엔비디아 가이드 문서는 1804로 되어 있는데, 20 LTS 버전을 깔았다면 2004로 디렉토리 이름을 바꿔주면 된다. 아래 예시를 참고.
 
 ```shell
 $ apt-key adv --fetch-keys http://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/7fa2af80.pub
@@ -28,13 +29,15 @@ $ sh -c 'echo "deb http://developer.download.nvidia.com/compute/cuda/repos/ubunt
 $ apt-get update
 ```
 
-- 설치 역시 버전을 신경써야 한다. 
+- `cuda-toolkit` 설치 역시 버전을 신경써야 한다. 
 
 ```shell
 $ apt-get install -y cuda-toolkit-11-3
 ```
 
-- 드라이버 버전 인식에 에러가 종종 있는 것 같다. 아래와 같이 버전 체크 없이 돌리자; `--env NVIDIA_DISABLE_REQUIRE=1` 
+- 아래는 cuda 설치를 확인할 수 있는 docker다. 
+  + 드라이버 버전 인식에 에러가 종종 있는 것 같다. 아래와 같이 버전 체크 없이 돌리자; `--env NVIDIA_DISABLE_REQUIRE=1` 
+  + 에러 없이 뭔가 돌렸다는 메시지를 받으면 잘 설치된 것이다. 
 
 ```shell
 docker run --gpus=all --env NVIDIA_DISABLE_REQUIRE=1 nvcr.io/nvidia/k8s/cuda-sample:nbody nbody -gpu -benchmark
