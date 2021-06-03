@@ -6,6 +6,8 @@ How to setup NVIDIA GPU setup in WSL 2
 
 ### How to setup CUDA in wsl 2 
 
+- 엔비디아 공식 안내보다 이게 낫다. 
+
 https://docs.docker.com/docker-for-windows/wsl/#gpu-support
 
 #### Requsite 
@@ -16,9 +18,9 @@ https://docs.docker.com/docker-for-windows/wsl/#gpu-support
 
 #### Installing
 
-- Install CUDA Driver on WINDOWS. See [THIS](https://developer.nvidia.com/cuda/wsl)
+- Install CUDA Driver on WINDOWS. Check [THIS](https://developer.nvidia.com/cuda/wsl).
   + 윈도에 CUDA를 지원하는 드라이버를 설치하자.
-  + 얘를 통해서 WSL 내 gpu를 호출한다. 
+  + 이 녀석을 통해 WSL 내 gpu를 호출한다. 
 
 - WSL에 cuda toolkit을 깔자. 
   + Toolkit install할 때 Ubuntu version, toolkit 버전을 맞춰야 한다. 현재 엔비디아 가이드 문서는 1804로 되어 있는데, 20 LTS 버전을 깔았다면 2004로 디렉토리 이름을 바꿔주면 된다. 아래 예시를 참고.
