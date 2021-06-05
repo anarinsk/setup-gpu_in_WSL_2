@@ -23,7 +23,7 @@ https://docs.docker.com/docker-for-windows/wsl/#gpu-support
   + 이 녀석을 통해 WSL 내 gpu를 호출한다. 
 
 - ~~WSL에 cuda toolkit을 깔자.~~
-  + 안 깔아도 잘 돌아간다.  
+  + 안 깔아도 잘 돌아간다. docker로 바로 가자. 
   + Toolkit install할 때 Ubuntu version, toolkit 버전을 맞춰야 한다. 아래 예시를 참고.
 
 ```shell
