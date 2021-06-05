@@ -23,11 +23,11 @@ https://docs.docker.com/docker-for-windows/wsl/#gpu-support
   + 이 녀석을 통해 WSL 내 gpu를 호출한다. 
 
 - WSL에 cuda toolkit을 깔자. 
-  + Toolkit install할 때 Ubuntu version, toolkit 버전을 맞춰야 한다. 현재 엔비디아 가이드 문서는 1804로 되어 있는데, 20 LTS 버전을 깔았다면 2004로 디렉토리 이름을 바꿔주면 된다. 아래 예시를 참고.
+  + Toolkit install할 때 Ubuntu version, toolkit 버전을 맞춰야 한다. 아래 예시를 참고.
 
 ```shell
 $ apt-key adv --fetch-keys http://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/7fa2af80.pub
-$ sh -c 'echo "deb http://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/" > /etc/apt/sources.list.d/cuda.list'
+$ sh -c 'echo "deb http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/" > /etc/apt/sources.list.d/cuda.list'
 $ apt-get update
 ```
 
