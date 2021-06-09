@@ -18,7 +18,7 @@ https://docs.docker.com/docker-for-windows/wsl/#gpu-support
 Proven combination 
 
 |CUDA Driver|Docker Version|
-|------|-----|
+|:----:|:----:|
 |470.76|3.3.2|
 
 #### Installing
