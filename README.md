@@ -10,9 +10,10 @@ How to setup NVIDIA GPU setup in WSL 2
 
 https://docs.docker.com/docker-for-windows/wsl/#gpu-support
 
+
 #### Requsite 
 + Nvidia CUDA beta driver. Check [THIS](https://developer.nvidia.com/cuda/wsl).
-+ Docker
++ Docker https://docs.docker.com/docker-for-windows/release-notes/
 + WSL 2 with Ubuntu 
 
 Proven combination 
