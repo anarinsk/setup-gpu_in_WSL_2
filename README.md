@@ -22,6 +22,7 @@ Proven combination
 |CUDA Driver|Docker Version|
 |:----:|:----:|
 |470.76|3.3.2|
+|470.76|3.3.4|
 
 #### Installing
 
