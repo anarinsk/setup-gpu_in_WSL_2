@@ -13,6 +13,7 @@ https://docs.docker.com/docker-for-windows/wsl/#gpu-support
 
 #### Requsite 
 + Nvidia CUDA beta driver. Check [THIS](https://developer.nvidia.com/cuda/wsl).
+  + 드라이버 정보는 Powershell에서 `nvidia-smi`로 확인할 수 있다. 
 + Docker https://docs.docker.com/docker-for-windows/release-notes/
 + WSL 2 with Ubuntu 
 
