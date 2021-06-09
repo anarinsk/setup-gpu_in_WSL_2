@@ -11,14 +11,19 @@ How to setup NVIDIA GPU setup in WSL 2
 https://docs.docker.com/docker-for-windows/wsl/#gpu-support
 
 #### Requsite 
-
-+ Docker <= 3.3.2
-  + Docker 3.3.3 버전에서 에러 난다. 
++ Nvidia CUDA beta driver. Check [THIS](https://developer.nvidia.com/cuda/wsl).
++ Docker
 + WSL 2 with Ubuntu 
+
+Proven combination 
+
+|CUDA Driver|Docker Version|
+|------|-----|
+|470.76|3.3.2|
 
 #### Installing
 
-- Install CUDA Driver on WINDOWS. Check [THIS](https://developer.nvidia.com/cuda/wsl).
+- Install CUDA Driver on WINDOWS. 
   + 윈도에 CUDA를 지원하는 드라이버를 설치하자.
   + 이 녀석을 통해 WSL 내 gpu를 호출한다. 
 
