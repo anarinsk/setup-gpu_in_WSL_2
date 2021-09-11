@@ -27,27 +27,24 @@ Proven combination
 |471.11|11.4|3.5.2|Windows 11|
 
 
-#### Installing
+#### Installing CUDA toolkit on WSL 
 
 - Install CUDA Driver on WINDOWS. 
   + 윈도에 CUDA를 지원하는 드라이버를 설치하자.
   + 이 녀석을 통해 WSL 내 gpu를 호출한다. 
 
-- ~~WSL에 cuda toolkit을 깔자.~~
-  + 안 깔아도 잘 돌아간다. 왠만하면 docker로 바로 가자. 
+- 어떤 경우에 깔아야 하나?
+  + 컨테이너를 통해 GPU를 쓸 예정이라면 안 깔아도 잘 돌아간다.
+    + docker로 바로 가자. 
   + Toolkit install할 때 Ubuntu version, toolkit 버전을 맞춰야 한다. 아래 예시를 참고.
 
-```shell
-$ apt-key adv --fetch-keys http://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/7fa2af80.pub
-$ sh -c 'echo "deb http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/" > /etc/apt/sources.list.d/cuda.list'
-$ apt-get update
-```
+- 설치 방법 
+  + https://developer.nvidia.com/cuda-downloads
+  + Linux > x86_64 > WSL_Ubuntu > 2.0 > runfile(local)
 
-- `cuda-toolkit` 설치 역시 버전을 신경써야 한다. 
+- 테스트 
 
-```shell
-$ apt-get install -y cuda-toolkit-11-3
-```
+
 
 - 아래는 cuda 설치를 확인할 수 있는 docker다. 
   + 드라이버 버전 인식에 에러가 종종 있는 것 같다. 아래와 같이 버전 체크 없이 돌리자; `--env NVIDIA_DISABLE_REQUIRE=1` 
